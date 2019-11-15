@@ -9,6 +9,11 @@ public class LeagueInvaders {
 		
 		
 }
+	void setup() {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+	
 	LeagueInvaders(){
 	frame = new JFrame();
 	}
