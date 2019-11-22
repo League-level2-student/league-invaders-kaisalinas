@@ -5,10 +5,13 @@ public class LeagueInvaders {
 	final int x = 500;
 	final int y = 800;
 	public static void main(String[] args) {
-	
+	LeagueInvaders invader = new LeagueInvaders();
 		
 		
 }
+
+	}
+	
 	void setup() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
