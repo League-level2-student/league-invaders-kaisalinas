@@ -19,8 +19,12 @@ int currentState = MENU_STATE;
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	repaint();
+	update(null);
 	
+
+
 }
+
 GamePanel(){
 	time = new Timer(1000/60, (ActionListener) this);
 
@@ -49,5 +53,15 @@ public void keyPressed(KeyEvent e) {
 public void keyReleased(KeyEvent e) {
 	// TODO Auto-generated method stub
 System.out.println("y");	
+}
+public void update(Graphics a) {
+	
+	
+	
+}
+
+public void draw(Graphics b) {
+	
+	
 }
 }
