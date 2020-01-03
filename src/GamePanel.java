@@ -60,8 +60,5 @@ public void update(Graphics a) {
 	
 }
 
-public void draw(Graphics b) {
-	
-	
-}
+
 }
