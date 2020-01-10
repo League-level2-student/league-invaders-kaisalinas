@@ -54,9 +54,13 @@ public void keyReleased(KeyEvent e) {
 	// TODO Auto-generated method stub
 System.out.println("y");	
 }
-public void update(Graphics a) {
+public void updateMenuState() {
 	
+}
+public void updateGameState() {
 	
+}
+public void updateEndState() {
 	
 }
 
