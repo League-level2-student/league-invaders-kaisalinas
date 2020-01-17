@@ -63,6 +63,14 @@ public void updateGameState() {
 public void updateEndState() {
 	
 }
-
-
+public void drawMenuState(Graphics g) {
+	
+}
+public void drawGameState(Graphics g) {
+	
+}
+public void drawEndState(Graphics g) {
+	
+	
+}
 }
