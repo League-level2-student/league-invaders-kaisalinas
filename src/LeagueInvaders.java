@@ -1,3 +1,4 @@
+import javax.swing.JFrame;
 
 public class LeagueInvaders {
 	JFrame frame;
@@ -6,5 +7,18 @@ public class LeagueInvaders {
 public static void main(String[] args) {
 	
 }
-LeagueInvaders(){}
+LeagueInvaders(){
+	frame = new JFrame();
+}
+public void setup() {
+	
+	
+	
+	
+	
+}
+
+
+
+
 }
