@@ -5,6 +5,7 @@ public class LeagueInvaders {
 	GamePanel gPanel;
 	public static final int WIDTH = 500;
 	public static final int HEIGHT = 800;
+	
 public static void main(String[] args) {
 	LeagueInvaders invader = new LeagueInvaders();
 	invader.setup();
@@ -13,6 +14,7 @@ public static void main(String[] args) {
 LeagueInvaders(){
 	frame = new JFrame();
 	gPanel = new GamePanel();
+	frame.addKeyListener(gPanel);
 }
 public void setup() {
 	

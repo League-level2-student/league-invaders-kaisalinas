@@ -48,6 +48,12 @@ void drawGameState(Graphics g) {
 void drawEndState(Graphics g) {
 	g.setColor(Color.RED);
 	g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+	g.setFont(titleFont);
+	g.setColor(Color.YELLOW);
+	g.drawString("Game Over",60,100);
+	g.setFont(titleFont2);
+	g.drawString("You killed enemies", 120, 300);
+	g.drawString("Press ENTER to ", 80, 450);
 }
 GamePanel(){
 	titleFont = new Font("Arial", Font.PLAIN, 48);
@@ -76,6 +82,7 @@ public void keyTyped(KeyEvent e) {
 @Override
 public void keyPressed(KeyEvent e) {
 	// TODO Auto-generated method stub
+	
 	if (e.getKeyCode()==KeyEvent.VK_ENTER) {
 	    if (currentState == END) {
 	        currentState = MENU;
@@ -83,6 +90,18 @@ public void keyPressed(KeyEvent e) {
 	        currentState++;
 	    }
 	}   
+	if (e.getKeyCode()==KeyEvent.VK_UP) {
+	    System.out.println("UP");
+	}
+	if (e.getKeyCode()==KeyEvent.VK_DOWN) {
+	    System.out.println("DOWN");
+	}
+	if (e.getKeyCode()==KeyEvent.VK_LEFT) {
+	    System.out.println("LEFT");
+	}
+	if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
+	    System.out.println("RIGHT");
+	}
 }
 @Override
 public void keyReleased(KeyEvent e) {
