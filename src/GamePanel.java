@@ -53,7 +53,7 @@ void drawEndState(Graphics g) {
 	g.drawString("Game Over",60,100);
 	g.setFont(titleFont2);
 	g.drawString("You killed enemies", 120, 300);
-	g.drawString("Press ENTER to ", 80, 450);
+	g.drawString("Press ENTER to restart", 80, 450);
 }
 GamePanel(){
 	titleFont = new Font("Arial", Font.PLAIN, 48);
