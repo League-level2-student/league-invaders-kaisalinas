@@ -17,6 +17,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Font titleFont2;
 	Timer frameDraw;
 	int currentState = MENU;
+	RocketShip ship = new RocketShip(200, 750, 50, 50, 5, true);
 	GamePanel gPanel;
 	@Override
 	public void paintComponent(Graphics g){
@@ -40,20 +41,21 @@ void drawMenuState(Graphics g) {
 	g.setFont(titleFont2);
 	g.drawString("Press ENTER to start", 120, 300);
 	g.drawString("Press SPACE for instructions", 80, 450);
-};
+}
 void drawGameState(Graphics g) {
 	g.setColor(Color.BLACK);
 	g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
-};
+	ship.draw(g);
+}
 void drawEndState(Graphics g) {
 	g.setColor(Color.RED);
 	g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
 	g.setFont(titleFont);
 	g.setColor(Color.YELLOW);
-	g.drawString("Game Over",60,100);
+	g.drawString("Game Over",100,100);
 	g.setFont(titleFont2);
 	g.drawString("You killed enemies", 120, 300);
-	g.drawString("Press ENTER to restart", 80, 450);
+	g.drawString("Press ENTER to restart", 100, 450);
 }
 GamePanel(){
 	titleFont = new Font("Arial", Font.PLAIN, 48);

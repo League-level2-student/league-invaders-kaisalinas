@@ -9,13 +9,12 @@ public class GameObject {
 	 public static void main(String[] args) {
 	
 	}
-	 GameObject(){
-		 x = 0;
-		 y = 0;
-		 width = 50;
-		 height = 100;
-		 speed = 0;
-		 isActive = true;
+	 GameObject(int x, int y, int width, int height, int speed,boolean isActive){
+		 this.x = x;
+		 this.y = y;
+		 this.width = width;
+		 this.height = height;
+		 this.isActive = true;
 	 }
 void update(){
 	
