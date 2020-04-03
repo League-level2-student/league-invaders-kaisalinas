@@ -17,7 +17,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Font titleFont2;
 	Timer frameDraw;
 	int currentState = MENU;
-	RocketShip ship = new RocketShip(200, 750, 50, 50, 5, true);
+	RocketShip ship = new RocketShip(200, 700, 50, 50, 5, true);
 	GamePanel gPanel;
 	@Override
 	public void paintComponent(Graphics g){
@@ -91,6 +91,10 @@ public void keyPressed(KeyEvent e) {
 	    } else {
 	        currentState++;
 	    }
+	 ship.right();
+	 ship.left();
+	 ship.up();
+	 ship.down();
 	}   
 	if (e.getKeyCode()==KeyEvent.VK_UP) {
 	    System.out.println("UP");
