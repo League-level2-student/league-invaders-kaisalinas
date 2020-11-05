@@ -22,4 +22,7 @@ void update(){
 void draw() {
 	
 }
+void purgeObjects() {
+	
+}
 }
