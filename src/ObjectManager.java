@@ -1,4 +1,5 @@
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -15,13 +16,19 @@ ObjectManager(RocketShip r){
 }
 void addAlien(){
 	aliens.add(new Alien(random.nextInt(LeagueInvaders.WIDTH),0,50,50,5));
+	update();
 }
 void update(){
-	
+
+	for(int i=0; i<=aliens.size(); i++)
+	if(LeagueInvaders.HEIGHT>800) {
 }
+	}
 void draw() {
-	
+
 }
+
+	
 void purgeObjects() {
 	
 }
