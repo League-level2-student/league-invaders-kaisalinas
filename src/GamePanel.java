@@ -14,13 +14,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU = 0;
 	final int GAME = 1;
 	final int END = 2;
+ 	Object ob;
 	Font titleFont;
 	Font titleFont2;
 	Timer frameDraw;
 	int currentState = MENU;
 	RocketShip ship = new RocketShip(200, 700, 50, 50, 5, true);
-	
-
+			
 	@Override
 	public void paintComponent(Graphics g) {
 		if (currentState == MENU) {
@@ -36,6 +36,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	};
 
 	void updateGameState() {
+	ob = new Object();
 	};
 
 	void updateEndState() {

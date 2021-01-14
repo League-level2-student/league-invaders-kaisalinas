@@ -39,7 +39,9 @@ private void Rocketship(java.awt.Graphics g) {
 void purgeObjects() {
 for(int i=0; i<aliens.size();i++) {
 	get(aliens);
-	
+	if(Alien.isActive = false) {
+	aliens.remove(i);	
+	}
 }
 }
 private void get(ArrayList<Alien> aliens2) {
