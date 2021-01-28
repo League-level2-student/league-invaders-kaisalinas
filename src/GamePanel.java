@@ -37,7 +37,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 	ob = new Object();
+	ObjectManager();
 	};
+
+	private void ObjectManager() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	void updateEndState() {
 	};
