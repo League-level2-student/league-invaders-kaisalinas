@@ -5,22 +5,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.Timer;
-
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU = 0;
 	final int GAME = 1;
 	final int END = 2;
- 	Object ob;
 	Font titleFont;
 	Font titleFont2;
 	Timer frameDraw;
 	int currentState = MENU;
+	public static BufferedImage image;
+	public static boolean needImage = true;
+	public static boolean gotImage = false;	
 	RocketShip ship = new RocketShip(200, 700, 50, 50, 5, true);
-			
+ 	ObjectManager ob = new ObjectManager(ship);
 	@Override
 	public void paintComponent(Graphics g) {
 		if (currentState == MENU) {
@@ -35,15 +38,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	void updateMenuState() {
 	};
 
-	void updateGameState() {
-	ob = new Object();
-	ObjectManager();
+	void updateGameState() {	
+		
+	ob.update();
 	};
 
-	private void ObjectManager() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	void updateEndState() {
 	};
@@ -60,8 +59,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void drawGameState(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		
+		if (gotImage) {
+			g.drawImage(image, 0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT, null);
+		} else {
+			g.setColor(Color.BLUE);
+			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		}
 		ship.draw(g);
 	}
 
@@ -81,6 +85,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		titleFont2 = new Font("Arial", Font.PLAIN, 24);
 		frameDraw = new Timer(1000 / 60, this);
 		frameDraw.start();
+		if (needImage) {
+		    loadImage ("space.png");
+		}
 	}
 
 	@Override
@@ -136,5 +143,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+	void loadImage(String imageFile) {
+	    if (needImage) {
+	        try {
+	            image = ImageIO.read(this.getClass().getResourceAsStream(imageFile));
+		    gotImage = true;
+	        } catch (Exception e) {
+	            
+	        }
+	        needImage = false;
+	    }
 	}
 }
