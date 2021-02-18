@@ -1,9 +1,11 @@
 
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ObjectManager {
+public class ObjectManager implements ActionListener{
 private static final String Graphics = null;
 RocketShip r;
 ArrayList<Projectile> bullets;
@@ -27,15 +29,12 @@ void update(){
 	}
 void draw(Graphics g) {
 for(int i=0; i<aliens.size(); i++) {
-Rocketship(g);
+aliens.get(i).draw(g);
 }
 }
 
 	
-private void Rocketship(java.awt.Graphics g) {
-	// TODO Auto-generated method stub
-	RocketShip ship = new RocketShip(200, 700, 50, 50, 5, true);
-}
+
 void purgeObjects() {
 for(int i=0; i<aliens.size();i++) {
 	get(aliens);
@@ -48,5 +47,12 @@ private void get(ArrayList<Alien> aliens2) {
 	// TODO Auto-generated method stub
 	
 }
-
+@Override
+public void actionPerformed(ActionEvent arg0) {
+	// TODO Auto-generated method stub
+	addAlien();
+}
+void addProjectiles(Projectile p) {
+	bullets.add(p);
+}
 }
