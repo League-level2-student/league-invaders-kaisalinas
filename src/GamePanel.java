@@ -68,7 +68,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
 		}
 		ship.draw(g);
-		ob.addProjectiles(ship.getProjectile());
 		ob.draw(g);
 	}
 
@@ -145,6 +144,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			System.out.println("RIGHT");
 			ship.right();
+		}
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+			System.out.println("hi");
+			ob.addProjectiles(ship.getProjectile());
 		}
 		startGame();
 	}
