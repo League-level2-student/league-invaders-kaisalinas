@@ -56,6 +56,11 @@ public class ObjectManager implements ActionListener {
 				aliens.remove(i);
 			}
 		}
+		for (int j = 0; j < bullets.size(); j++) {
+			if(bullets.get(j).isActive == false) {
+				bullets.remove(j);
+			}
+		}
 	}
 
 	private void get(ArrayList<Alien> aliens2) {
@@ -79,7 +84,12 @@ public class ObjectManager implements ActionListener {
 		    aliens.get(i).isActive = false;
 		    r.isActive = false;
 			}
-
+			for(int j=0; j < bullets.size(); j++) {
+			if (aliens.get(i).collisionBox.intersects(bullets.get(j).collisionBox)) {
+				aliens.get(i).isActive = false;
+				bullets.get(j).isActive = false;
+			}
+			}
 		}
 		
 	}
