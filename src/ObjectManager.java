@@ -10,12 +10,14 @@ public class ObjectManager implements ActionListener {
 	RocketShip r;
 	ArrayList<Projectile> bullets;
 	ArrayList<Alien> aliens;
+	int score;
 	Random random = new Random();
 
 	ObjectManager(RocketShip r) {
 		this.r = r;
 		bullets = new ArrayList<Projectile>();
 		aliens = new ArrayList<Alien>();
+		score = 0;
 	}
 
 	void addAlien() {
