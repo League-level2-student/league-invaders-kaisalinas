@@ -29,10 +29,10 @@ public class ObjectManager implements ActionListener {
 
 		for (int i = 0; i < aliens.size(); i++) {
 			if (aliens.get(i).y > LeagueInvaders.HEIGHT) {
-			aliens.get(i).isActive = false;
+				aliens.get(i).isActive = false;
 			}
 			aliens.get(i).update();
-			}
+		}
 		for (int i = 0; i < bullets.size(); i++) {
 			if (bullets.get(i).y > LeagueInvaders.HEIGHT) {
 				bullets.get(i).isActive = false;
@@ -41,7 +41,7 @@ public class ObjectManager implements ActionListener {
 		}
 		checkCollision();
 		purgeObjects();
-		}
+	}
 
 	void draw(Graphics g) {
 		for (int i = 0; i < aliens.size(); i++) {
@@ -59,7 +59,7 @@ public class ObjectManager implements ActionListener {
 			}
 		}
 		for (int j = 0; j < bullets.size(); j++) {
-			if(bullets.get(j).isActive == false) {
+			if (bullets.get(j).isActive == false) {
 				bullets.remove(j);
 			}
 		}
@@ -80,20 +80,23 @@ public class ObjectManager implements ActionListener {
 		bullets.add(p);
 
 	}
-  void checkCollision() {
+
+	void checkCollision() {
 		for (int i = 0; i < aliens.size(); i++) {
-			if (r.collisionBox.intersects(aliens.get(i).collisionBox)){
-		    aliens.get(i).isActive = false;
-		    r.isActive = false;
-			}
-			for(int j=0; j < bullets.size(); j++) {
-			if (aliens.get(i).collisionBox.intersects(bullets.get(j).collisionBox)) {
+			if (r.collisionBox.intersects(aliens.get(i).collisionBox)) {
 				aliens.get(i).isActive = false;
-				bullets.get(j).isActive = false;
+				r.isActive = false;
 			}
+			for (int j = 0; j < bullets.size(); j++) {
+				if (aliens.get(i).collisionBox.intersects(bullets.get(j).collisionBox)) {
+					aliens.get(i).isActive = false;
+					bullets.get(j).isActive = false;
+				}
 			}
 		}
-		
 	}
-			
+
+	int getscore() {
+return score;
+  }
 }
