@@ -125,6 +125,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 				currentState++;
 			if(currentState == END) {
 				alienSpawn.stop();
+				RocketShip rocket = new RocketShip(200, 700, 50, 50, 5, true);
 			}
 			if (currentState == MENU) {
 				startGame();
